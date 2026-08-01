@@ -5,13 +5,13 @@ Material utilizado na disciplina **GENERATIVE AI & ADAVANCED NETS** da FIAP.
 ## Aulas
 
 | Aula | Notebook | Colab |
-|------|----------|-------|
-| 01 - Avaliação de Pipelines RAG sem Ground Truth | ✅ | 🚀 |
-| 02 - |  |  |
-| 03 -  |  |  |
-| 04 -  |  |  |
-| 05 -  |  |  |
-| 06 -  |  |  |
+|------|:--------:|:------:|
+| 01 - Avaliação de Pipelines RAG sem Ground Truth | [Notebook](./notebooks-aulas/01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) |
+| 02 - | | |
+| 03 - | | |
+| 04 - | | |
+| 05 - | | |
+| 06 - | | |
 
 ---
 
