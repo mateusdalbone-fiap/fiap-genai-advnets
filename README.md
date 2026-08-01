@@ -1,21 +1,24 @@
 # GenAI ADVNETS
 
-Material utilizado na disciplina **GenAI ADVNETS** da FIAP.
+## Aulas
 
-## Conteúdo
+| Aula | Notebook | Colab |
+|------|----------|-------|
+| 01 - Avaliação de Pipelines RAG sem Ground Truth | ✅ | 🚀 |
+| 02 - |  |  |
+| 03 -  |  |  |
+| 04 -  |  |  |
+| 05 -  |  |  |
+| 06 -  |  |  |
 
-- 📓 Notebooks
-- 📑 Slides
-- 💻 Exercícios
-- 🚀 Projetos
-- 📚 Materiais complementares
+---
+
+## Datasets
+
+Todos os notebooks baixam automaticamente os datasets.
+
+---
 
 ## Ambiente
 
-```bash
-pip install -r requirements.txt
-```
-
-## Professor
-
-Mateus Dalbone
+Todos os notebooks foram desenvolvidos para execução no Google Colab.
