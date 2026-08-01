@@ -1,5 +1,7 @@
 # GenAI ADVNETS
 
+Material utilizado na disciplina **GENERATIVE AI & ADAVANCED NETS** da FIAP.
+
 ## Aulas
 
 | Aula | Notebook | Colab |
