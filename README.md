@@ -16,7 +16,7 @@ Material utilizado na disciplina **GENERATIVE AI & ADAVANCED NETS** da FIAP.
 |------|:--------:|:------:|
 | 01 - Avaliação de Pipelines RAG sem Ground Truth | [Notebook](./notebooks-aulas/01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) |
 | ↳ Checkpoint para iniciar a Aula 02: Construção e Avaliação de Pipelines RAG | [Notebook](./checkpoints/[checkpoint_aula_1end_2start]_01_10082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/checkpoints/%5Bcheckpoint_aula_1end_2start%5D_01_10082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) |
-| ↳ Versão Final da Aula 02 | | |
+| ↳ Versão Final da Aula 02 | [Notebook](./notebooks-finais/[final_aula_2]_01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-finais/[final_aula_2]_01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) |
 | 02 - | | |
 | 03 - | | |
 | 04 - | | |
