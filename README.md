@@ -18,10 +18,10 @@ Material utilizado na disciplina **GENERATIVE AI & ADAVANCED NETS** da FIAP.
 | Tópico 01/ Aula 02 - ↳ Checkpoint para iniciar a Aula 02: Construção e Avaliação de Pipelines RAG | [Notebook](./checkpoints/[checkpoint_aula_1end_2start]_01_10082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/checkpoints/%5Bcheckpoint_aula_1end_2start%5D_01_10082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 01/ Aula 02 - ↳ Versão Final da Aula 02 | [Notebook](./notebooks-finais/[final_aula_2]_01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-finais/[final_aula_2]_01_03082026_RAG_EVAL_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 02/ Aula 03 - Autoencoders (AE) e Variational Autoencoders (VAE) | [Notebook](./notebooks-aulas/03_17082026_AE_VAE_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/03_17082026_AE_VAE_GenAI_ADVNETS_SKLT.ipynb) |
-| 03 - | | |
-| 04 - | | |
-| 05 - | | |
-| 06 - | | |
+| Tópico 03 - | | |
+| Tópico 04 - | | |
+| Tópico 05 - | | |
+| Tópico 06 - | | |
 
 ---
 
