@@ -26,7 +26,7 @@ Material utilizado na disciplina **GENERATIVE AI & ADAVANCED NETS** da FIAP.
 | Tópico 04/ Aula 05 - ↳ Versão Final da Aula 05:  A Nova Fronteira da IA Generativa: Modelos de Difusão | [Notebook](./notebooks-finais/[final_aula_5]05_24082026_DIFFUSION_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-finais/[final_aula_5]05_24082026_DIFFUSION_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 05/ Aula 06 - Multi-Agent Systems| [Notebook](./notebooks-aulas/06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 05/ Aula 06 - ↳ Checkpoint para iniciar a Aula 06:  Multi-Agent Systems | [Notebook](./checkpoints/[checkpoint_aula_5end_6start]06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/checkpoints/[checkpoint_aula_5end_6start]06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) |
-| Tópico 06 - | | |
+| Tópico 06 - ReAct e Tool Calling com LangGraph | [Notebook](./notebooks-aulas/07_14089026_ReACT_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/07_14089026_ReACT_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 07 - | | |
 | Tópico 08 - | | |
 
