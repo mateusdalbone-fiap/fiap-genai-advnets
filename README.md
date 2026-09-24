@@ -28,8 +28,12 @@ Material utilizado na disciplina **GENERATIVE AI & ADAVANCED NETS** da FIAP.
 | Tópico 05/ Aula 06 - ↳ Checkpoint para iniciar a Aula 06:  Multi-Agent Systems | [Notebook](./checkpoints/[checkpoint_aula_5end_6start]06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/checkpoints/[checkpoint_aula_5end_6start]06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 05/ Aula 06 - ↳ Versão Final da Aula 06:  Multi-Agent Systems | [Notebook](./notebooks-finais/[final_aula_6]06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-finais/[final_aula_6]06_31082026_MultiAgents_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 06 - ReAct e Tool Calling com LangGraph | [Notebook](./notebooks-aulas/07_14089026_ReACT_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/07_14089026_ReACT_GenAI_ADVNETS_SKLT.ipynb) |
+| Tópico 06/ Aula 07 - ↳ Versão Final da Aula 07:  ReAct e Tool Calling com LangGraph | [Notebook](./notebooks-finais/[final_aula_7]07_14089026_ReACT_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-finais/[final_aula_7]07_14089026_ReACT_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 07 - Memória em Agentes de IA | [Notebook](./notebooks-aulas/08_210926_Agent_Memories_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/08_210926_Agent_Memories_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 08 - | | |
+
+
+
 
 
 ---
