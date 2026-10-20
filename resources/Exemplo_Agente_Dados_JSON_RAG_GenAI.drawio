@@ -1,0 +1,402 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT" pages="2">
+  <diagram id="architecture-main" name="01 - Arquitetura base">
+    <mxGraphModel dx="2204" dy="1047" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2850" pageHeight="1540" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p_request" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" value="1  •  ENTRADA, SEGURANÇA E ROTEAMENTO" vertex="1">
+          <mxGeometry height="180" width="1320" x="20" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p_struct" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" value="2A  •  CONSULTA A DADOS ESTRUTURADOS" vertex="1">
+          <mxGeometry height="150" width="1440" x="1335" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="p_rag" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F3FF;strokeColor=#DDD6FE;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" value="2B  •  BUSCA DE CONHECIMENTO / RAG" vertex="1">
+          <mxGeometry height="155" width="1440" x="1335" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="p_answer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#FED7AA;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" value="3  •  GERAÇÃO E VALIDAÇÃO DA RESPOSTA" vertex="1">
+          <mxGeometry height="360" width="1520" x="1280" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="p_memory" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDFA;strokeColor=#99F6E4;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" value="MEMÓRIA TRANSVERSAL  •  SETAS TRACEJADAS = PERSISTÊNCIA" vertex="1">
+          <mxGeometry height="180" width="655" x="280" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="t_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=26;fontStyle=1;fontColor=#0F172A;" value="AGENTE DE CONSULTA A DADOS JSON E DOCUMENTAÇÃO" vertex="1">
+          <mxGeometry height="38" width="2100" x="35" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=15;fontColor=#475569;" value="Exemplo didático: protege a entrada, escolhe a fonte de informação, gera uma resposta fundamentada e registra a conversa." vertex="1">
+          <mxGeometry height="32" width="2350" x="37" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="t_direct_note" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#0F766E;" value="Rota C: perguntas simples seguem direto para o prompt, sem recuperação." vertex="1">
+          <mxGeometry height="22" width="900" x="1350" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="e_start_user" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="user" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_gateway" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="gateway" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gateway_regex" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="regex" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_regex_mal" edge="1" parent="1" source="regex" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="malicious" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mal_decision" edge="1" parent="1" source="malicious" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="input_safe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_safe_router" edge="1" parent="1" source="input_safe" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0F9D69;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="router" value="Sim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_unsafe_block" edge="1" parent="1" source="input_safe" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B85450;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="block" value="Não">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1004" y="330" />
+              <mxPoint x="940" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_block_end" edge="1" parent="1" source="block" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B85450;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="block_end" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_router_structured" edge="1" parent="1" source="router" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#377DFF;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="query_gen" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1195" y="325" />
+              <mxPoint x="1455" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_router_docs" edge="1" parent="1" source="router" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673A6;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="query_embedding" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1195" y="555" />
+              <mxPoint x="1450" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_router_direct" edge="1" parent="1" source="router" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0F9D69;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="prompt" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1195" y="325" />
+              <mxPoint x="1195" y="800" />
+              <mxPoint x="1305" y="800" />
+              <mxPoint x="1305" y="896" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_qgen_validate" edge="1" parent="1" source="query_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#377DFF;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="query_validate" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_validate_allow" edge="1" parent="1" source="query_validate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#377DFF;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="query_allowlist" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_allow_exec" edge="1" parent="1" source="query_allowlist" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#377DFF;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="query_exec" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_exec_db" edge="1" parent="1" source="query_exec" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#377DFF;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="json_db" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_db_norm" edge="1" parent="1" source="json_db" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#377DFF;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="normalize" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_norm_context" edge="1" parent="1" source="normalize" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#377DFF;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="context" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2650" y="470" />
+              <mxPoint x="2680" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_embedding_search" edge="1" parent="1" source="query_embedding" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673A6;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vector_search" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_search_db" edge="1" parent="1" source="vector_search" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673A6;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vector_db" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_db_acl" edge="1" parent="1" source="vector_db" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673A6;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="acl" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_acl_rerank" edge="1" parent="1" source="acl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673A6;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="reranker" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_rerank_context" edge="1" parent="1" source="reranker" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673A6;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="context" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2550" y="660" />
+              <mxPoint x="2550" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_context_prompt" edge="1" parent="1" source="context" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6D28D9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="prompt" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2675" y="750" />
+              <mxPoint x="1425" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_prompt_llm" edge="1" parent="1" source="prompt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6D28D9;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="llm" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_llm_hate" edge="1" parent="1" source="llm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8E63B0;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="hate" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_hate_pii" edge="1" parent="1" source="hate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B85450;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="pii" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pii_nli" edge="1" parent="1" source="pii" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B85450;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="nli" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_nli_decision" edge="1" parent="1" source="nli" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B85450;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="output_safe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_output_answer" edge="1" parent="1" source="output_safe" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0F9D69;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="answer" value="Sim">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2557" y="975" />
+              <mxPoint x="2680" y="975" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_answer_end" edge="1" parent="1" source="answer" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0F9D69;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="answer_end" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_output_handoff" edge="1" parent="1" source="output_safe" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B85450;strokeWidth=2;endArrow=block;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="handoff" value="Não / baixa confiança">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2475" y="892" />
+              <mxPoint x="2475" y="1049" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_handoff_end" edge="1" parent="1" source="handoff" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B85450;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="handoff_end" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_persist" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0F766E;strokeWidth=1.7;dashed=1;dashPattern=8 5;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="persist" value="Pergunta recebida">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="202.5" y="520" />
+              <mxPoint x="205" y="520" />
+              <mxPoint x="205" y="530" />
+              <mxPoint x="460" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_answer_persist" edge="1" parent="1" source="answer" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0F766E;strokeWidth=1.7;dashed=1;dashPattern=8 5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="persist" value="Resposta enviada">
+          <mxGeometry relative="1" x="0.0003" as="geometry">
+            <Array as="points">
+              <mxPoint x="2835" y="1051" />
+              <mxPoint x="2835" y="1260" />
+              <mxPoint x="460" y="1260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_persist_redis" edge="1" parent="1" source="persist" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0F766E;strokeWidth=1.7;dashed=1;dashPattern=8 5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="redis" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#1F2937;" value="INÍCIO" vertex="1">
+          <mxGeometry height="48" width="72" x="35" y="222" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;perimeter=parallelogramPerimeter;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#4C3661;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#4C3661;text-align:center;&quot;&gt;PERGUNTA DO USUÁRIO&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Mensagem recebida&lt;/div&gt;" vertex="1">
+          <mxGeometry height="76" width="155" x="125" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E9EDF2;strokeColor=#64748B;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#334155;text-align:center;&quot;&gt;API Gateway&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Entrada única, roteamento e políticas de API&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="185" x="300" y="201" as="geometry" />
+        </mxCell>
+        <mxCell id="regex" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E5486D;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Filtro por regex / padrões&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Bloqueios determinísticos por expressão&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="190" x="505" y="201" as="geometry" />
+        </mxCell>
+        <mxCell id="malicious" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E11D48;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Classificador de intenção maliciosa&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Detecta intenção de abuso, extração ou uso indevido&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="205" x="715" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="input_safe" parent="1" style="rhombus;whiteSpace=wrap;html=1;perimeter=rhombusPerimeter;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#7F6000;" value="Entrada permitida?" vertex="1">
+          <mxGeometry height="103" width="118" x="945" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="router" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Roteador de intenção / tipo de pergunta&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Escolhe resposta direta, busca estruturada ou busca semântica&lt;/div&gt;" vertex="1">
+          <mxGeometry height="96" width="230" x="1080" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="block" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#8A1C17;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#8A1C17;text-align:center;&quot;&gt;Bloquear solicitação&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Motivo registrado&lt;/div&gt;" vertex="1">
+          <mxGeometry height="76" width="190" x="845" y="382" as="geometry" />
+        </mxCell>
+        <mxCell id="block_end" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#1F2937;" value="FIM" vertex="1">
+          <mxGeometry height="46" width="66" x="1052" y="398" as="geometry" />
+        </mxCell>
+        <mxCell id="query_gen" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Gerador LLM de consulta JSON / NoSQL&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Traduz a pergunta em consulta estruturada&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="215" x="1350" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="query_validate" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Validador de consulta gerada&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Confere campos, operadores, limites e sintaxe&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="210" x="1590" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="query_allowlist" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E11D48;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Validador allowlist de consultas&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Permite somente coleções, campos e operações autorizadas&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="210" x="1825" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="query_exec" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Execução de query no banco de documentos&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Executa filtro / agregação na coleção JSON&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="220" x="2060" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="json_db" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#EAF2FF;strokeColor=#377DFF;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#1D4ED8;text-align:center;&quot;&gt;Banco JSON / documentos (JSON, BSON)&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Documentos semiestruturados; filtros por campos e metadados&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="215" x="2305" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="normalize" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Normalização dos resultados da consulta&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Padroniza campos e limita o tamanho do retorno&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="215" x="2545" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="query_embedding" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#8B5CF6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Modelo de embeddings&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Representação vetorial de textos e consultas&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="205" x="1350" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="vector_search" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Busca vetorial Top-K de chunks&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Recupera trechos semanticamente próximos&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="215" x="1580" y="614" as="geometry" />
+        </mxCell>
+        <mxCell id="vector_db" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#EAF2FF;strokeColor=#377DFF;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#1D4ED8;text-align:center;&quot;&gt;Banco vetorial de chunks e embeddings&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Chunks, vetores e metadados de origem&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="215" x="1820" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="acl" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Filtro de metadados / ACL na recuperação&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Restringe documentos por usuário, área e permissão&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="215" x="2060" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="reranker" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Reranker de documentos recuperados&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Reordena os candidatos por relevância&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="215" x="2300" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="context" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Montagem do contexto de evidências&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Agrupa trechos, registros e fontes para o prompt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="210" x="2570" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="prompt" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Prompt final com contexto e regras&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Combina pergunta, evidências, políticas e formato de saída&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="210" x="1320" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="llm" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Geração de resposta fundamentada&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;LLM responde usando apenas evidências disponíveis&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="210" x="1550" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="hate" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E11D48;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Detector de discurso de ódio / toxicidade&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Classificador de conteúdo abusivo ou discriminatório&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="215" x="1785" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="pii" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E11D48;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Redação de PII na saída&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Mascaramento de CPF, e-mail e dados sensíveis&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="215" x="2020" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="nli" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF3D6;strokeColor=#D6B656;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#92400E;text-align:center;&quot;&gt;NLI de fundamentação da resposta&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Verifica se a evidência implica as afirmações geradas&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="215" x="2255" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="output_safe" parent="1" style="rhombus;whiteSpace=wrap;html=1;perimeter=rhombusPerimeter;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#7F6000;" value="Resposta segura e fundamentada?" vertex="1">
+          <mxGeometry height="105" width="125" x="2495" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="answer" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Resposta com citações / fontes&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Inclui referências aos documentos ou registros consultados&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="220" x="2570" y="1005" as="geometry" />
+        </mxCell>
+        <mxCell id="answer_end" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#1F2937;" value="FIM" vertex="1">
+          <mxGeometry height="48" width="72" x="2645" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="handoff" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E9EDF2;strokeColor=#64748B;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#334155;text-align:center;&quot;&gt;Escalonamento humano&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Transfere casos para suporte ou especialista&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="220" x="2260" y="1005" as="geometry" />
+        </mxCell>
+        <mxCell id="handoff_end" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#1F2937;" value="FIM" vertex="1">
+          <mxGeometry height="48" width="72" x="2335" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="persist" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E6F4F1;strokeColor=#0F9D8A;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#0F766E;text-align:center;&quot;&gt;Persistir pergunta e resposta da sessão&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Armazena mensagens para contexto e auditoria&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="230" x="345" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#EAF2FF;strokeColor=#377DFF;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#1D4ED8;text-align:center;&quot;&gt;Cache de sessão / conversa (Redis)&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Histórico recente, estado e respostas em cache&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="230" x="620" y="690" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="architecture-options" name="02 - Preparação e extensões">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2350" pageHeight="930" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p_ingest" value="PREPARAÇÃO OFFLINE DA DOCUMENTAÇÃO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="140" width="2220" height="235" as="geometry" />
+        </mxCell>
+        <mxCell id="p_sec" value="SEGURANÇA ADICIONAL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF1F2;strokeColor=#FECDD3;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="465" width="720" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="p_quality" value="RECUPERAÇÃO E QUALIDADE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F3FF;strokeColor=#DDD6FE;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="465" width="720" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="p_ops" value="RESILIÊNCIA E OPERAÇÃO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#BBF7D0;strokeWidth=1;opacity=52;verticalAlign=top;spacingTop=10;fontColor=#475569;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="465" width="700" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_title" value="COMO A BASE É PREPARADA E COMO A ARQUITETURA PODE EVOLUIR" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=25;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="22" width="2200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_sub" value="Estes componentes são extensões opcionais: acrescente-os quando houver um requisito que justifique custo e complexidade." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=15;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="42" y="65" width="2200" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_ingest_label" value="Documentos de origem → chunking → embeddings → banco vetorial" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="80" y="170" width="1100" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_json_note" value="O banco JSON é consultado em tempo de execução. Já os documentos de referência são pré-processados e indexados antes da consulta." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#475569;fontSize=12;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="310" width="780" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_sec_label" value="Adicione controles de acordo com o modelo de ameaça, os dados e as permissões exigidas." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=12;fontColor=#9F1239;" vertex="1" parent="1">
+          <mxGeometry x="75" y="475" width="660" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_quality_label" value="Adicione quando busca, contexto ou qualidade de resposta precisarem de reforço." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6D28D9;" vertex="1" parent="1">
+          <mxGeometry x="835" y="475" width="660" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_ops_label" value="Adicione quando confiabilidade, custo, latência ou diagnóstico forem requisitos." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=12;fontColor=#166534;" vertex="1" parent="1">
+          <mxGeometry x="1595" y="475" width="650" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_privacy" value="Atenção à memória: defina retenção, controle de acesso, minimização e remoção de dados sensíveis antes de gravar mensagens ou episódios." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#FCD34D;fontColor=#92400E;fontSize=13;align=left;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="850" width="2220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ingest1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="raw_docs" target="chunking">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ingest2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="chunking" target="doc_embeddings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ingest3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673A6;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="doc_embeddings" target="doc_vector_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="raw_docs" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#1D4ED8;text-align:center;&quot;&gt;Repositório de documentos brutos&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;PDFs, DOCX, HTML e anexos antes do processamento&lt;/div&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#EAF2FF;strokeColor=#377DFF;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="90" y="215" width="220" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="chunking" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Chunking / splitter&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Segmentação de documentos para recuperação&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#8B5CF6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="365" y="215" width="210" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="doc_embeddings" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Modelo de embeddings&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Representação vetorial de textos e consultas&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#8B5CF6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="215" width="210" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="doc_vector_db" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#1D4ED8;text-align:center;&quot;&gt;Banco vetorial de chunks e embeddings&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Chunks, vetores e metadados de origem&lt;/div&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#EAF2FF;strokeColor=#377DFF;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="895" y="210" width="230" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="json_store" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#1D4ED8;text-align:center;&quot;&gt;Banco JSON / documentos (JSON, BSON)&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Documentos semiestruturados; filtros por campos e metadados&lt;/div&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#EAF2FF;strokeColor=#377DFF;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="210" width="230" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_prompt" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Detector de prompt injection&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Sinaliza instruções maliciosas e tentativas de fuga&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E5486D;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="580" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_secrets" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Detector de vazamento de segredos&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Identifica tokens, chaves e credenciais&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E11D48;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="580" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_acl" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Validador de autorização por documento&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Confere se o usuário pode acessar cada fonte&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E11D48;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="690" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_confidential" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#BE123C;text-align:center;&quot;&gt;Filtro de dados confidenciais&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Detecta informação interna restrita antes da resposta&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFE8ED;strokeColor=#E11D48;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="690" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_hybrid" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#6D28D9;text-align:center;&quot;&gt;Busca híbrida&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Combina busca densa e lexical&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EAFE;strokeColor=#9673A6;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="870" y="580" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_summary" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#92400E;text-align:center;&quot;&gt;Modelo de sumarização de documentos&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Gera resumos de documentos longos&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF3D6;strokeColor=#D6B656;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1115" y="580" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_judge" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#92400E;text-align:center;&quot;&gt;LLM-as-a-judge para qualidade&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Avalia relevância, completude e aderência a critérios&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF3D6;strokeColor=#D6B656;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="870" y="690" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_ragmetrics" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#047857;text-align:center;&quot;&gt;Métricas de recuperação RAG&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Recall@K, relevância, diversidade e latência&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DDF8E9;strokeColor=#82B366;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1115" y="690" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_circuit" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#334155;text-align:center;&quot;&gt;Circuit breaker / retry com limite&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Controla falhas repetidas e tentativas de recuperação&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E9EDF2;strokeColor=#64748B;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1660" y="580" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_fallback" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#334155;text-align:center;&quot;&gt;Fallback para modelo alternativo&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Direciona para um modelo ou estratégia de reserva&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E9EDF2;strokeColor=#64748B;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1905" y="580" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_timeout" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#334155;text-align:center;&quot;&gt;Timeout e cancelamento&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Interrompe chamadas lentas e libera recursos&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#E9EDF2;strokeColor=#64748B;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1660" y="690" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_dashboard" value="&lt;div style=&quot;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:#047857;text-align:center;&quot;&gt;Dashboard de latência e custo&lt;/div&gt;&lt;div style=&quot;font-family:Arial,sans-serif;font-size:11px;color:#475569;text-align:center;margin-top:4px;&quot;&gt;Tokens, tempo, custo e volume de chamadas&lt;/div&gt;" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DDF8E9;strokeColor=#0F9D69;strokeWidth=2;fontSize=13;align=center;verticalAlign=middle;spacing=6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1905" y="690" width="220" height="88" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
