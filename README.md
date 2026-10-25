@@ -33,7 +33,7 @@ Material utilizado na disciplina **GENERATIVE AI & ADAVANCED NETS** da FIAP.
 | Tópico 08/ Aula 09 - ↳ Versão Final da Aula 07:  ReAct e Tool Calling com LangGraph | [Notebook](./notebooks-finais/[final_aula_8]08_210926_Agent_Memories_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-finais/[final_aula_8]08_210926_Agent_Memories_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 09 - Transformers | [Notebook](./notebooks-aulas/09_051026_Transformers_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-aulas/09_051026_Transformers_GenAI_ADVNETS_SKLT.ipynb) |
 | Tópico 09 - Transformers - ↳ Versão Final da Aula 09| [Notebook](./notebooks-finais/[final_aula_9]09_051026_Transformers_GenAI_ADVNETS_SKLT.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mateusdalbone-fiap/fiap-genai-advnets/blob/main/notebooks-finais/[final_aula_9]09_051026_Transformers_GenAI_ADVNETS_SKLT.ipynb) |
-| Revisão geral| |https://docs.google.com/presentation/d/1D6O2ZtKNwAG5lsYPU0nJbRyD3ugOL6scYch7SdtsXe8/edit?slide=id.hd8d23845fbbb767_0_30#slide=id.hd8d23845fbbb767_0_30 |
+| Revisão geral| https://github.com/mateusdalbone-fiap/fiap-genai-advnets/blob/main/resources/Apresenta%C3%A7%C3%A3o%20sem%20t%C3%ADtulo.pptx|https://docs.google.com/presentation/d/1D6O2ZtKNwAG5lsYPU0nJbRyD3ugOL6scYch7SdtsXe8/edit?slide=id.hd8d23845fbbb767_0_30#slide=id.hd8d23845fbbb767_0_30 |
 
 
 
